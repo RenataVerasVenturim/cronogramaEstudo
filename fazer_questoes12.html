@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - Plano Diretor e Planejamento Urbano</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .quiz-container {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    #result {
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>Quiz: Plano Diretor e Planejamento Urbano</h1>
+  <form id="quizForm">
+    
+    <div class="question">
+      <h3>1. Qual a principal finalidade do Plano Diretor?</h3>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a" /> Atrair turistas para o município</label>
+        <label><input type="radio" name="q1" value="b" /> Regular a política de saúde pública</label>
+        <label><input type="radio" name="q1" value="c" /> Ordenar o desenvolvimento urbano e garantir função social da cidade</label>
+        <label><input type="radio" name="q1" value="d" /> Estimular o comércio local</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>2. Qual destes é um instrumento previsto no Estatuto da Cidade?</h3>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a" /> Zona Franca</label>
+        <label><input type="radio" name="q2" value="b" /> Estudo de Impacto de Vizinhança (EIV)</label>
+        <label><input type="radio" name="q2" value="c" /> Incentivo Fiscal Municipal</label>
+        <label><input type="radio" name="q2" value="d" /> Política Nacional de Resíduos Sólidos</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>3. A participação popular é prevista em qual momento do Plano Diretor?</h3>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a" /> Apenas na etapa final</label>
+        <label><input type="radio" name="q3" value="b" /> Apenas quando há desapropriações</label>
+        <label><input type="radio" name="q3" value="c" /> Em todas as fases da elaboração e implementação</label>
+        <label><input type="radio" name="q3" value="d" /> Quando o prefeito julgar necessário</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>4. A função social da propriedade urbana está relacionada a:</h3>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a" /> Lucro imobiliário privado</label>
+        <label><input type="radio" name="q4" value="b" /> Ocupação irregular</label>
+        <label><input type="radio" name="q4" value="c" /> Uso da terra conforme o interesse coletivo</label>
+        <label><input type="radio" name="q4" value="d" /> Liberdade total de uso do solo pelo proprietário</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>5. O Plano Diretor é obrigatório para cidades com:</h3>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a" /> Mais de 2 mil habitantes</label>
+        <label><input type="radio" name="q5" value="b" /> Menos de 10 mil habitantes</label>
+        <label><input type="radio" name="q5" value="c" /> Mais de 20 mil habitantes</label>
+        <label><input type="radio" name="q5" value="d" /> Qualquer número de habitantes</label>
+      </div>
+    </div>
+
+    <button type="button" onclick="corrigirQuiz()">Ver Resultado</button>
+
+    <div id="result"></div>
+
+  </form>
+</div>
+
+<script>
+  function corrigirQuiz() {
+    const respostas = {
+      q1: 'c',
+      q2: 'b',
+      q3: 'c',
+      q4: 'c',
+      q5: 'c'
+    };
+
+    let acertos = 0;
+    for (let q in respostas) {
+      const respostaUsuario = document.querySelector(`input[name="${q}"]:checked`);
+      if (respostaUsuario && respostaUsuario.value === respostas[q]) {
+        acertos++;
+      }
+    }
+
+    const total = Object.keys(respostas).length;
+    const resultado = document.getElementById('result');
+    resultado.innerHTML = `Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.`;
+  }
+</script>
+
+</body>
+</html>

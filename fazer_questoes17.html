@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Índices Urbanísticos e Topografia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f2f7f5;
+      color: #2e3d3e;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: #1565c0;
+      color: white;
+      padding: 25px 40px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background-color: white;
+      padding: 20px;
+      border-left: 5px solid #42a5f5;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #0d47a1;
+      margin-top: 0;
+    }
+
+    ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .highlight {
+      color: #1b5e20;
+      font-weight: bold;
+    }
+
+    figure {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 8px;
+    }
+
+    iframe {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question p {
+      font-weight: bold;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .feedback {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #1565c0;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Índices Urbanísticos e Noções de Topografia</h1>
+  <p>Conceitos essenciais para concursos públicos de áreas urbanas e técnicas</p>
+</header>
+
+<main>
+
+  <!-- Conteúdo original omitido por brevidade... (insira aqui os <section> anteriores) -->
+
+  <section>
+    <h2>📝 Teste seus conhecimentos</h2>
+
+    <div class="question" data-answer="b">
+      <p>1. O que representa o Coeficiente de Aproveitamento (CA)?</p>
+      <label><input type="radio" name="q1" value="a"> Percentual da área impermeável no lote</label>
+      <label><input type="radio" name="q1" value="b"> Quantidade máxima de área construída permitida</label>
+      <label><input type="radio" name="q1" value="c"> Recuo mínimo frontal de uma edificação</label>
+      <div class="feedback" id="f1"></div>
+    </div>
+
+    <div class="question" data-answer="a">
+      <p>2. Curvas de nível em um mapa topográfico indicam:</p>
+      <label><input type="radio" name="q2" value="a"> Pontos com mesma altitude</label>
+      <label><input type="radio" name="q2" value="b"> Áreas com maior permeabilidade</label>
+      <label><input type="radio" name="q2" value="c"> Locais propensos à ocupação irregular</label>
+      <div class="feedback" id="f2"></div>
+    </div>
+
+    <div class="question" data-answer="c">
+      <p>3. Qual parâmetro indica a porcentagem mínima do solo que deve ser mantido permeável?</p>
+      <label><input type="radio" name="q3" value="a"> Coeficiente de Aproveitamento</label>
+      <label><input type="radio" name="q3" value="b"> Taxa de Ocupação</label>
+      <label><input type="radio" name="q3" value="c"> Taxa de Permeabilidade</label>
+      <div class="feedback" id="f3"></div>
+    </div>
+
+    <button onclick="checkAnswers()">Verificar Respostas</button>
+
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 - Conteúdo voltado para concursos públicos | Urbanismo e Topografia
+</footer>
+
+<script>
+  function checkAnswers() {
+    const questions = document.querySelectorAll('.question');
+    questions.forEach((q, i) => {
+      const selected = q.querySelector('input[type="radio"]:checked');
+      const answer = q.getAttribute('data-answer');
+      const feedback = document.getElementById('f' + (i + 1));
+      if (selected) {
+        if (selected.value === answer) {
+          feedback.textContent = "✅ Correto!";
+          feedback.className = "feedback correct";
+        } else {
+          feedback.textContent = "❌ Incorreto.";
+          feedback.className = "feedback incorrect";
+        }
+      } else {
+        feedback.textContent = "⚠️ Selecione uma opção.";
+        feedback.className = "feedback incorrect";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

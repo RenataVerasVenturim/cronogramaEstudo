@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios - Conforto Ambiental e Acessibilidade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    .question {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    .question p {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .result {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercícios - Conforto Ambiental e Acessibilidade</h1>
+
+  <form id="quizForm">
+    
+    <div class="question">
+      <p>1. Qual material possui maior inércia térmica?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="errado"> EPS (isopor)</label>
+        <label><input type="radio" name="q1" value="correto"> Concreto</label>
+        <label><input type="radio" name="q1" value="errado"> Lã de vidro</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Qual estratégia é considerada passiva?</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="correto"> Ventilação cruzada</label>
+        <label><input type="radio" name="q2" value="errado"> Ar-condicionado</label>
+        <label><input type="radio" name="q2" value="errado"> Aquecedor elétrico</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. A NBR 9050 determina qual largura mínima para corredores acessíveis?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="errado"> 0,90 m</label>
+        <label><input type="radio" name="q3" value="correto"> 1,20 m</label>
+        <label><input type="radio" name="q3" value="errado"> 1,00 m</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>4. Qual tipo de iluminação é mais suave?</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="correto"> Indireta</label>
+        <label><input type="radio" name="q4" value="errado"> Direta</label>
+        <label><input type="radio" name="q4" value="errado"> Zenital</label>
+      </div>
+    </div>
+
+    <button type="button" onclick="calcularResultado()">Ver Resultado</button>
+
+    <div class="result" id="resultado"></div>
+  </form>
+
+  <script>
+    function calcularResultado() {
+      const respostas = document.querySelectorAll("input[type=radio]:checked");
+      let acertos = 0;
+
+      respostas.forEach((resposta) => {
+        const parent = resposta.closest('label');
+        if (resposta.value === "correto") {
+          parent.classList.add("correct");
+          acertos++;
+        } else {
+          parent.classList.add("incorrect");
+        }
+      });
+
+      const total = document.querySelectorAll(".question").length;
+      const resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.innerHTML = `Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.`;
+    }
+  </script>
+
+</body>
+</html>

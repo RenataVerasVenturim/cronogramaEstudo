@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Questões de Concurso: Representação Gráfica de Projetos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: #222;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #004080;
+    }
+    .questao {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .enunciado {
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #003366;
+    }
+    .alternativas label {
+      display: block;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+    button {
+      margin-top: 0.7rem;
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #00264d;
+    }
+    .resultado {
+      margin-top: 0.8rem;
+      font-weight: 600;
+      padding: 0.7rem;
+      border-radius: 4px;
+    }
+    .acertou {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .errou {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    footer {
+      text-align: center;
+      color: #777;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Questões de Concurso: Representação Gráfica de Projetos</h1>
+
+  <div class="questao" id="q1">
+    <div class="enunciado">
+      1. Segundo a NBR 6492, a planta baixa representa:
+    </div>
+    <form>
+      <div class="alternativas">
+        <label><input type="radio" name="q1" value="A" /> A) Vista superior da edificação cortada a 1,20m do piso</label>
+        <label><input type="radio" name="q1" value="B" /> B) Vista lateral da edificação mostrando as fachadas</label>
+        <label><input type="radio" name="q1" value="C" /> C) Vista interna em corte vertical</label>
+        <label><input type="radio" name="q1" value="D" /> D) Perspectiva isométrica da edificação</label>
+        <label><input type="radio" name="q1" value="E" /> E) Detalhamento de fundação</label>
+      </div>
+      <button type="button" onclick="checarResposta('q1', 'A', 'A planta baixa é a vista superior da edificação cortada a 1,20m do piso, conforme NBR 6492.')">Checar resposta</button>
+      <div class="resultado" id="res-q1"></div>
+    </form>
+  </div>
+
+  <div class="questao" id="q2">
+    <div class="enunciado">
+      2. Qual das alternativas apresenta a norma que rege a representação de projetos elétricos de baixa tensão?
+    </div>
+    <form>
+      <div class="alternativas">
+        <label><input type="radio" name="q2" value="A" /> A) NBR 6492</label>
+        <label><input type="radio" name="q2" value="B" /> B) NBR 5410</label>
+        <label><input type="radio" name="q2" value="C" /> C) NBR 5626</label>
+        <label><input type="radio" name="q2" value="D" /> D) NBR 8400</label>
+        <label><input type="radio" name="q2" value="E" /> E) NBR 5674</label>
+      </div>
+      <button type="button" onclick="checarResposta('q2', 'B', 'A NBR 5410 regula as instalações elétricas de baixa tensão, importante para projetos de instalações elétricas.')">Checar resposta</button>
+      <div class="resultado" id="res-q2"></div>
+    </form>
+  </div>
+
+  <div class="questao" id="q3">
+    <div class="enunciado">
+      3. Em um projeto estrutural, a representação das armaduras é feita através de:
+    </div>
+    <form>
+      <div class="alternativas">
+        <label><input type="radio" name="q3" value="A" /> A) Linhas contínuas grossas sem indicação</label>
+        <label><input type="radio" name="q3" value="B" /> B) Símbolos gráficos padronizados com indicação de bitolas e espaçamentos</label>
+        <label><input type="radio" name="q3" value="C" /> C) Linhas tracejadas em vermelho</label>
+        <label><input type="radio" name="q3" value="D" /> D) Somente em plantas elétricas</label>
+        <label><input type="radio" name="q3" value="E" /> E) Na planta baixa arquitetônica, sem detalhamento</label>
+      </div>
+      <button type="button" onclick="checarResposta('q3', 'B', 'As armaduras são representadas por símbolos gráficos que indicam bitolas e espaçamentos, conforme normas técnicas.')">Checar resposta</button>
+      <div class="resultado" id="res-q3"></div>
+    </form>
+  </div>
+
+  <div class="questao" id="q4">
+    <div class="enunciado">
+      4. No projeto hidrossanitário, qual norma técnica brasileira deve ser consultada para a elaboração do projeto?
+    </div>
+    <form>
+      <div class="alternativas">
+        <label><input type="radio" name="q4" value="A" /> A) NBR 5626</label>
+        <label><input type="radio" name="q4" value="B" /> B) NBR 5410</label>
+        <label><input type="radio" name="q4" value="C" /> C) NBR 8400</label>
+        <label><input type="radio" name="q4" value="D" /> D) NBR 6492</label>
+        <label><input type="radio" name="q4" value="E" /> E) NBR 5674</label>
+      </div>
+      <button type="button" onclick="checarResposta('q4', 'A', 'A NBR 5626 trata das instalações hidráulicas prediais, importante para projetos hidrossanitários.')">Checar resposta</button>
+      <div class="resultado" id="res-q4"></div>
+    </form>
+  </div>
+
+  <div class="questao" id="q5">
+    <div class="enunciado">
+      5. Qual é a escala mais comum usada em plantas baixas para representar residências em concursos públicos?
+    </div>
+    <form>
+      <div class="alternativas">
+        <label><input type="radio" name="q5" value="A" /> A) 1:500</label>
+        <label><input type="radio" name="q5" value="B" /> B) 1:200</label>
+        <label><input type="radio" name="q5" value="C" /> C) 1:100</label>
+        <label><input type="radio" name="q5" value="D" /> D) 1:50</label>
+        <label><input type="radio" name="q5" value="E" /> E) 1:20</label>
+      </div>
+      <button type="button" onclick="checarResposta('q5', 'C', 'A escala 1:100 é a mais utilizada em plantas baixas residenciais para facilitar a leitura e detalhamento.')">Checar resposta</button>
+      <div class="resultado" id="res-q5"></div>
+    </form>
+  </div>
+
+  <footer>
+    <p>Questões baseadas em conteúdos de concursos públicos e normas técnicas brasileiras.</p>
+  </footer>
+
+  <script>
+    function checarResposta(idQuestao, respostaCorreta, explicacao) {
+      const questao = document.getElementById(idQuestao);
+      const radios = questao.querySelectorAll('input[type="radio"]');
+      let respostaSelecionada = null;
+      radios.forEach(radio => {
+        if (radio.checked) respostaSelecionada = radio.value;
+      });
+      const divResultado = questao.querySelector('.resultado');
+      if (!respostaSelecionada) {
+        divResultado.textContent = "Por favor, selecione uma alternativa.";
+        divResultado.className = 'resultado errou';
+        return;
+      }
+      if (respostaSelecionada === respostaCorreta) {
+        divResultado.textContent = "Correto! " + explicacao;
+        divResultado.className = 'resultado acertou';
+      } else {
+        divResultado.textContent = "Errado. " + explicacao;
+        divResultado.className = 'resultado errou';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Questões - Sistemas Construtivos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f7f8;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      color: #2980b9;
+      text-align: center;
+    }
+    .question {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question h2 {
+      font-size: 1.2rem;
+    }
+    .options label {
+      display: block;
+      margin: 10px 0;
+    }
+    .btn {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #1f618d;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quiz: Sistemas Construtivos</h1>
+
+  <div class="question" id="q1">
+    <h2>1. Qual material é mais comumente usado na alvenaria estrutural?</h2>
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> Madeira laminada</label>
+      <label><input type="radio" name="q1" value="b"> Blocos de concreto</label>
+      <label><input type="radio" name="q1" value="c"> Perfis metálicos tipo I</label>
+      <label><input type="radio" name="q1" value="d"> Chapas de aço galvanizado</label>
+    </div>
+    <button class="btn" onclick="checkAnswer('q1', 'b')">Responder</button>
+    <div class="result" id="result-q1"></div>
+  </div>
+
+  <div class="question" id="q2">
+    <h2>2. Qual norma trata do projeto de estruturas de concreto armado?</h2>
+    <div class="options">
+      <label><input type="radio" name="q2" value="a"> ABNT NBR 6118</label>
+      <label><input type="radio" name="q2" value="b"> ABNT NBR 8800</label>
+      <label><input type="radio" name="q2" value="c"> ABNT NBR 7190</label>
+      <label><input type="radio" name="q2" value="d"> ABNT NBR 15220</label>
+    </div>
+    <button class="btn" onclick="checkAnswer('q2', 'a')">Responder</button>
+    <div class="result" id="result-q2"></div>
+  </div>
+
+  <div class="question" id="q3">
+    <h2>3. Qual das opções é um tratamento comum para aumentar a durabilidade da madeira?</h2>
+    <div class="options">
+      <label><input type="radio" name="q3" value="a"> Emboço</label>
+      <label><input type="radio" name="q3" value="b"> Galvanização</label>
+      <label><input type="radio" name="q3" value="c"> Pintura com cal</label>
+      <label><input type="radio" name="q3" value="d"> Preservação contra fungos e insetos</label>
+    </div>
+    <button class="btn" onclick="checkAnswer('q3', 'd')">Responder</button>
+    <div class="result" id="result-q3"></div>
+  </div>
+
+  <script>
+    function checkAnswer(questionId, correctAnswer) {
+      const options = document.getElementsByName(questionId);
+      let selected = null;
+      for (const option of options) {
+        if (option.checked) {
+          selected = option.value;
+          break;
+        }
+      }
+      const resultDiv = document.getElementById('result-' + questionId);
+      if (!selected) {
+        resultDiv.textContent = 'Selecione uma alternativa.';
+        resultDiv.style.color = 'orange';
+        return;
+      }
+      if (selected === correctAnswer) {
+        resultDiv.textContent = '✅ Correto!';
+        resultDiv.style.color = 'green';
+      } else {
+        resultDiv.textContent = '❌ Incorreto.';
+        resultDiv.style.color = 'red';
+      }
+    }
+  </script>
+
+</body>
+</html>

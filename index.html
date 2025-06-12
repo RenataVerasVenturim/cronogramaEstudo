@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cronograma de Estudos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .dia {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    .tema {
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .subtopico {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      margin-left: 20px;
+    }
+    .subtopico input {
+      margin-right: 10px;
+      margin-top: 4px;
+    }
+    .subtopico label {
+      flex: 1;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+    .acoes-tema {
+      margin-left: 20px;
+      margin-top: 10px;
+      display: none;
+    }
+    .acoes-tema a {
+      margin-right: 12px;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .acoes-tema a:hover {
+      text-decoration: underline;
+    }
+    .mostrar {
+      display: block !important;
+    }
+    .checkmark {
+      margin-left: 6px;
+      color: green;
+    }
+    .subtopicos {
+      display: none;
+    }
+    .subtopicos.mostrar {
+      display: block;
+    }
+    .importante {
+  background-color: #fff8b3;
+  border-left: 4px solid #ffd700;
+  padding: 4px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Cronograma de Estudos</h1>
+  
+  <p>
+    Subtópicos em amarelo são os que mais caem!
+  </p>
+  <div id="cronograma"></div>
+
+  <script>
+
+    const cronograma = [
+          { data: '12/06/2025', tema: `Plano Diretor e Planejamento Urbano
+– Conceito e importância
+– Instrumentos de gestão urbana
+– Participação popular` },
+      { data: '13/06/2025', tema: `Mobilidade Urbana e Legislação
+– Princípios de mobilidade urbana sustentável
+– Leis Municipais, Estaduais e Federais pertinentes` },
+      { data: '14/06/2025', tema: `Estatuto das Cidades (Lei 10.257/2001)
+– Objetivos e diretrizes
+– Instrumentos jurídicos e urbanísticos` },
+      { data: '15/06/2025', tema: `Lei 11.888/2008 (Assistência Técnica para Habitação de Interesse Social)
+– Finalidades
+– Impactos sociais
+– Aplicações práticas` },
+      { data: '16/06/2025', tema: `Meio Ambiente e Urbanização
+– Relação cidade-meio ambiente
+– Diretrizes para urbanização sustentável` },
+      { data: '17/06/2025', tema: `Índices Urbanísticos e Noções de Topografia
+– Coeficiente de aproveitamento, taxa de ocupação, recuos
+– Curvas de nível, leitura de plantas topográficas` },
+      { data: '18/06/2025', tema: `Fases e Etapas do Projeto Arquitetônico
+– Estudo preliminar, anteprojeto, projeto executivo
+– Compatibilização de projetos` },
+      { data: '19/06/2025', tema: `Sistemas Construtivos, Materiais e Acabamentos
+– Alvenaria, concreto, estruturas metálicas e madeira
+– Especificação e normatização` },
+      { data: '20/06/2025', tema: `Representação Gráfica de Projetos
+– Arquitetônico, estrutural, instalações (elétrica, hidrossanitária, etc.)
+– Combate a incêndio e climatização` },
+      { data: '21/06/2025', tema: `Conforto Ambiental e Acessibilidade
+– Acústica, iluminação, ventilação e insolação
+– Desenho universal e normas de acessibilidade` },
+      { data: '22/06/2025', tema: `Noções Técnicas
+– Instalações elétricas, hidráulicas e sanitárias
+– Cálculo estrutural básico` },
+      { data: '23/06/2025', tema: `Orçamento, Laudos e Pareceres Técnicos
+– Estimativas de custo
+– Responsabilidades e estrutura de laudos` },
+      { data: '24/06/2025', tema: `Projetos Específicos
+– Paisagismo e vegetação urbana
+– Reformas, revitalizações e restaurações` },
+      { data: '25/06/2025', tema: `Execução e Tecnologia
+– Instalações de obras, serviços preliminares, movimentação de terra
+– Gerenciamento de contratos
+– Computação gráfica (AutoCAD, SketchUp, Revit) e domínio de Windows, Word, Excel` },
+      { data: '26/06/2025', tema: `Constituição Federal de 1988 (arts. 1º a 14, 37 a 43, 196 a 200)
+– Estatuto Social da Empresa de Infraestrutura e Obras de Niterói – ION` },
+      { data: '27/06/2025', tema: `História do Brasil – República Velha, Era Vargas, Estado Novo, República Liberal‑Conservadora, Governos Militares, Nova República e Brasil Contemporâneo` },
+      { data: '28/06/2025', tema: `Clima, vegetação, relevo, hidrografia e solo; Recursos minerais e energéticos; Sustentabilidade e problemas ambientais` },
+      { data: '29/06/2025', tema: `Política, economia, sociedade, tecnologia, meio ambiente, IA, crise climática; Aspectos históricos e geográficos de Niterói` },
+      { data: '30/06/2025', tema: `Língua Portuguesa – leitura, modos de discurso, gêneros, figuras, recursos gráficos` },
+      { data: '01/07/2025', tema: `Língua Portuguesa – coesão, coerência, conectivos, classes de palavras` },
+      { data: '02/07/2025', tema: `Língua Portuguesa – verbos, regência, pronomes, flexões, estrutura de palavras` },
+      { data: '03/07/2025', tema: `Língua Portuguesa – sintaxe, crase, acentuação, pontuação` },
+      { data: '04/07/2025', tema: `Raciocínio Lógico e Matemático – problemas, conjuntos, porcentagem, proporcionalidade, sequências` },
+      { data: '05/07/2025', tema: `Raciocínio Lógico e Matemático – lógica proposicional, contagem, probabilidade` },
+      { data: '06/07/2025', tema: `Noções de Informática – Conceitos, vírus, backup, firewall, LGPD` },
+      { data: '07/07/2025', tema: `Noções de Informática – MS Office, Windows e Linux – atalhos e comandos` },
+      { data: '08/07/2025', tema: `Revisão + Simulado conhecimentos específicos` },
+      { data: '09/07/2025', tema: `Revisão + Simulado conhecimentos gerais e legislação municipal` },
+      { data: '10/07/2025', tema: `Revisão + Simulado português` },
+      { data: '11/07/2025', tema: `Revisão + Simulado raciocínio lógico` },
+      { data: '12/07/2025', tema: `Revisão + Simulado informática` },
+      { data: '13/07/2025', tema: `Revisão + Simulado geral provas anteriores` }
+    ];
+    const subtopicosImportantes = [
+  "Conceito e importância",
+  "Instrumentos de gestão urbana",
+  "Participação popular",
+  "Princípios de mobilidade urbana sustentável",
+  "Leis Municipais, Estaduais e Federais pertinentes",
+  "Objetivos e diretrizes",
+  "Instrumentos jurídicos e urbanísticos",
+  "Estudo preliminar, anteprojeto, projeto executivo",
+  "Compatibilização de projetos",
+  "Acústica, iluminação, ventilação e insolação",
+  "Desenho universal e normas de acessibilidade",
+  "Estimativas de custo",
+  "Responsabilidades e estrutura de laudos",
+  "Computação gráfica (AutoCAD, SketchUp, Revit)"
+];
+
+    const cont = document.getElementById('cronograma');
+
+    cronograma.forEach((item, diaIndex) => {
+      const d = document.createElement('div');
+      d.className = 'dia';
+
+      const linhas = item.tema.split('\n');
+      const titulo = linhas[0];
+      const subtitulos = linhas.slice(1);
+
+      const temaHtml = `<div class="tema" onclick="toggleSubtopicos(${diaIndex})"><strong>${item.data}</strong>: ${titulo}</div>`;
+
+      let subtopicoHtml = `<div class="subtopicos" id="subtopicos_${diaIndex}">`;
+
+      subtitulos.forEach((sub, i) => {
+        const id = `chk_${diaIndex}_${i}`;
+        const texto = sub.replace(/^–\s*/, '').trim();
+        const checked = localStorage.getItem(id) === 'true';
+         const isImportante = subtopicosImportantes.some(imp => texto.includes(imp));
+  
+  subtopicoHtml += `
+    <div class="subtopico ${isImportante ? 'importante' : ''}">
+      <input type="checkbox" id="${id}" ${checked ? 'checked' : ''} onchange="salvarCheckbox('${id}')">
+      <label for="${id}">${texto}</label>
+      <span class="checkmark" id="check_${id}">${checked ? '✅' : ''}</span>
+    </div>
+  `;
+});
+
+      subtopicoHtml += `
+      <div class="acoes-tema" id="acoes_tema_${diaIndex}">
+        <a href="ler_conteudo${12 + diaIndex}.html" target="_blank">Ler conteúdo</a>
+        <a href="fazer_questoes${12 + diaIndex}.html" target="_blank">Fazer questões</a>
+        </div>`;
+      
+
+      d.innerHTML = temaHtml + subtopicoHtml;
+      cont.appendChild(d);
+    });
+
+    function toggleSubtopicos(dia) {
+      const subtopicos = document.getElementById(`subtopicos_${dia}`);
+      const acoes = document.getElementById(`acoes_tema_${dia}`);
+      subtopicos.classList.toggle('mostrar');
+      acoes.classList.toggle('mostrar');
+    }
+
+    function salvarCheckbox(id) {
+      const checkbox = document.getElementById(id);
+      const mark = document.getElementById(`check_${id}`);
+      localStorage.setItem(id, checkbox.checked);
+      mark.textContent = checkbox.checked ? '✅' : '';
+    }
+
+  </script>
+</body>
+</html>

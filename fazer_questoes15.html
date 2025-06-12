@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - Lei 11.888/2008</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 20px; }
+    .quiz-container { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 700px; margin: auto; }
+    h2 { color: #2c3e50; }
+    .question { margin-bottom: 20px; }
+    .options { list-style-type: none; padding: 0; }
+    .options li { margin: 8px 0; }
+    .btn { background-color: #2e7d32; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+    .btn:hover { background-color: #256228; }
+    .feedback { margin-top: 10px; font-weight: bold; }
+    .correct { color: green; }
+    .wrong { color: red; }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>Quiz – Lei nº 11.888/2008</h2>
+
+    <div class="question" id="q1">
+      <p><strong>1. Qual é o público-alvo da assistência técnica prevista pela Lei nº 11.888/2008?</strong></p>
+      <ul class="options">
+        <li><input type="radio" name="q1" value="a"> Qualquer cidadão com renda mensal</li>
+        <li><input type="radio" name="q1" value="b"> Famílias com renda mensal de até 3 salários mínimos</li>
+        <li><input type="radio" name="q1" value="c"> Apenas moradores de zonas rurais</li>
+        <li><input type="radio" name="q1" value="d"> Pessoas cadastradas no Bolsa Família</li>
+      </ul>
+      <div class="feedback" id="f1"></div>
+    </div>
+
+    <div class="question" id="q2">
+      <p><strong>2. Quais são algumas das finalidades da assistência técnica previstas na lei?</strong></p>
+      <ul class="options">
+        <li><input type="radio" name="q2" value="a"> Incentivar a construção de condomínios fechados</li>
+        <li><input type="radio" name="q2" value="b"> Qualificar o uso do espaço e evitar áreas de risco</li>
+        <li><input type="radio" name="q2" value="c"> Aumentar o valor do IPTU</li>
+        <li><input type="radio" name="q2" value="d"> Ampliar a oferta de imóveis para aluguel</li>
+      </ul>
+      <div class="feedback" id="f2"></div>
+    </div>
+
+    <div class="question" id="q3">
+      <p><strong>3. Qual nível de governo deve apoiar financeiramente os serviços de assistência técnica?</strong></p>
+      <ul class="options">
+        <li><input type="radio" name="q3" value="a"> Apenas os municípios</li>
+        <li><input type="radio" name="q3" value="b"> O setor privado</li>
+        <li><input type="radio" name="q3" value="c"> A União</li>
+        <li><input type="radio" name="q3" value="d"> Os conselhos de bairro</li>
+      </ul>
+      <div class="feedback" id="f3"></div>
+    </div>
+
+    <div class="question" id="q4">
+      <p><strong>4. Em que situações os serviços devem ser prioritariamente aplicados?</strong></p>
+      <ul class="options">
+        <li><input type="radio" name="q4" value="a"> Projetos empresariais</li>
+        <li><input type="radio" name="q4" value="b"> Regiões comerciais</li>
+        <li><input type="radio" name="q4" value="c"> Iniciativas sob regime de mutirão e zonas de interesse social</li>
+        <li><input type="radio" name="q4" value="d"> Reformas em prédios históricos</li>
+      </ul>
+      <div class="feedback" id="f4"></div>
+    </div>
+
+    <button class="btn" onclick="corrigir()">Corrigir</button>
+  </div>
+
+  <script>
+    function corrigir() {
+      const respostas = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'c',
+        q4: 'c'
+      };
+
+      for (let i = 1; i <= 4; i++) {
+        const respostaUsuario = document.querySelector(`input[name="q${i}"]:checked`);
+        const feedback = document.getElementById(`f${i}`);
+
+        if (respostaUsuario) {
+          if (respostaUsuario.value === respostas[`q${i}`]) {
+            feedback.textContent = "✔ Resposta correta!";
+            feedback.className = "feedback correct";
+          } else {
+            feedback.textContent = "✘ Resposta incorreta.";
+            feedback.className = "feedback wrong";
+          }
+        } else {
+          feedback.textContent = "⚠️ Por favor, selecione uma resposta.";
+          feedback.className = "feedback wrong";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
