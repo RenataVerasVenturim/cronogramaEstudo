@@ -117,7 +117,6 @@
 
   </form>
 </div>
-
 <script>
   function corrigirQuiz() {
     const respostas = {
@@ -125,17 +124,47 @@
       q2: 'b',
       q3: 'c',
       q4: 'c',
-      q5: 'c',
-      q6: 'a', // Resposta correta da questão 6
-      q7: 'b'  // Resposta correta da questão 7
+      q5: 'c'
     };
 
     let acertos = 0;
+
+    // Limpa marcações anteriores
+    document.querySelectorAll('.options label').forEach(label => {
+      label.style.backgroundColor = '';
+      label.style.color = '';
+      label.style.fontWeight = '';
+    });
+
     for (let q in respostas) {
-      const respostaUsuario = document.querySelector(`input[name="${q}"]:checked`);
-      if (respostaUsuario && respostaUsuario.value === respostas[q]) {
-        acertos++;
-      }
+      const respostaCorreta = respostas[q];
+      const opcoes = document.getElementsByName(q);
+      let usuarioRespondeu = false;
+
+      opcoes.forEach(opcao => {
+        const label = opcao.parentElement;
+
+        if (opcao.checked) {
+          usuarioRespondeu = true;
+          if (opcao.value === respostaCorreta) {
+            acertos++;
+            label.style.backgroundColor = '#d4edda'; // verde claro
+            label.style.color = '#155724';
+            label.style.fontWeight = 'bold';
+          } else {
+            label.style.backgroundColor = '#f8d7da'; // vermelho claro
+            label.style.color = '#721c24';
+            label.style.fontWeight = 'bold';
+          }
+        }
+
+        // Sempre marca a correta com verde claro
+        if (opcao.value === respostaCorreta) {
+          label.style.backgroundColor = '#d4edda';
+          label.style.color = '#155724';
+          label.style.fontWeight = 'bold';
+        }
+      });
     }
 
     const total = Object.keys(respostas).length;
@@ -143,6 +172,5 @@
     resultado.innerHTML = `Você acertou <strong>${acertos}</strong> de <strong>${total}</strong> questões.`;
   }
 </script>
-
 </body>
 </html>
