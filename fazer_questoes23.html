@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios - Engenharia de Custos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Exercícios de Engenharia de Custos</h1>
+
+    <div class="question" id="q1">
+      <h3>1. Qual tipo de orçamento é mais detalhado e utilizado na fase executiva da obra?</h3>
+      <label><input type="radio" name="q1" value="0"> Orçamento Preliminar</label>
+      <label><input type="radio" name="q1" value="0"> Orçamento Paramétrico</label>
+      <label><input type="radio" name="q1" value="1"> Orçamento Analítico</label>
+      <label><input type="radio" name="q1" value="0"> Orçamento Estimativo</label>
+      <div class="feedback" id="f1"></div>
+    </div>
+
+    <div class="question" id="q2">
+      <h3>2. A Lei 14.133/2021 exige que tipo de planilha para a fase de licitação?</h3>
+      <label><input type="radio" name="q2" value="1"> Planilha orçamentária detalhada</label>
+      <label><input type="radio" name="q2" value="0"> Planilha simplificada</label>
+      <label><input type="radio" name="q2" value="0"> Planilha executiva</label>
+      <label><input type="radio" name="q2" value="0"> Planilha global</label>
+      <div class="feedback" id="f2"></div>
+    </div>
+
+    <div class="question" id="q3">
+      <h3>3. Qual item abaixo NÃO compõe o BDI?</h3>
+      <label><input type="radio" name="q3" value="1"> Salário do engenheiro da obra</label>
+      <label><input type="radio" name="q3" value="0"> Tributos</label>
+      <label><input type="radio" name="q3" value="0"> Lucro</label>
+      <label><input type="radio" name="q3" value="0"> Riscos</label>
+      <div class="feedback" id="f3"></div>
+    </div>
+
+    <div class="question" id="q4">
+      <h3>4. Qual norma trata especificamente de perícias de engenharia?</h3>
+      <label><input type="radio" name="q4" value="0"> NBR 12721</label>
+      <label><input type="radio" name="q4" value="1"> NBR 13752</label>
+      <label><input type="radio" name="q4" value="0"> NBR 14653</label>
+      <label><input type="radio" name="q4" value="0"> NBR 14724</label>
+      <div class="feedback" id="f4"></div>
+    </div>
+
+    <div class="question" id="q5">
+      <h3>5. Assinale o item que é parte obrigatória de um laudo técnico:</h3>
+      <label><input type="radio" name="q5" value="0"> Jurisprudência</label>
+      <label><input type="radio" name="q5" value="1"> Conclusão</label>
+      <label><input type="radio" name="q5" value="0"> Citação doutrinária</label>
+      <label><input type="radio" name="q5" value="0"> Prefácio</label>
+      <div class="feedback" id="f5"></div>
+    </div>
+
+    <button onclick="corrigir()">Corrigir Respostas</button>
+  </div>
+
+  <script>
+    function corrigir() {
+      for (let i = 1; i <= 5; i++) {
+        const radios = document.getElementsByName(`q${i}`);
+        let resposta = null;
+        radios.forEach(r => { if (r.checked) resposta = r.value; });
+        const feedback = document.getElementById(`f${i}`);
+        if (resposta === "1") {
+          feedback.textContent = "✔️ Correto!";
+          feedback.style.color = "green";
+        } else {
+          feedback.textContent = "❌ Incorreto.";
+          feedback.style.color = "red";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

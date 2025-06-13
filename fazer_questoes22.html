@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noções Técnicas – Instalações & Cálculo Estrutural | Exercícios de Concurso</title>
+  <!-- ===== CSS Base ===== -->
+  <style>
+    :root {
+      --bg-light: #f4f4f9;
+      --bg-card: #ffffff;
+      --primary: #2c3e50;
+      --secondary: #34495e;
+      --accent: #28b463;
+      --warning: #e74c3c;
+      --muted: #7f8c8d;
+      --shadow: 0 2px 6px rgba(0,0,0,.08);
+      --radius: 6px;
+    }
+
+    /* ---------- Global ---------- */
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:20px;
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.6;
+      background:var(--bg-light);
+      color:#333;
+    }
+    h1,h2{color:var(--primary);} h3{color:var(--secondary);} a{color:var(--primary);} a:hover{text-decoration:none;}
+    section{margin-bottom:32px;}
+    ul{padding-left:18px;}
+
+    /* ---------- Highlight Boxes ---------- */
+    .highlight{background:#f9e79f;padding:5px;border-radius:3px;}
+    .note{background:#d5f5e3;padding:12px;border-left:5px solid var(--accent);margin:20px 0;border-radius:var(--radius);}
+    .question-block{background:#f2d7d5;padding:12px;border-left:5px solid var(--warning);margin:20px 0;border-radius:var(--radius);} .question-block p{font-weight:bold;}
+    .answer-block{background:#d5dbdb;padding:12px;border-left:5px solid var(--muted);border-radius:var(--radius);}
+
+    /* ---------- Exercícios ---------- */
+    #exercicios h2{margin-bottom:12px;}
+    .exercise{
+      background:var(--bg-card);
+      padding:18px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin-bottom:24px;
+    }
+    .exercise p{margin:0 0 12px 0; font-weight:600;}
+    .answers label{display:block;margin-bottom:6px;cursor:pointer;}
+    .answers input{margin-right:8px;cursor:pointer;}
+    .btn{
+      padding:8px 16px;
+      border:none;
+      border-radius:var(--radius);
+      background:var(--primary);
+      color:#fff;
+      cursor:pointer;
+      transition:background .2s ease;
+    }
+    .btn:hover{background:#1c2833;}
+    .feedback{margin-top:10px;font-weight:bold;}
+    .correct{color:green;}
+    .incorrect{color:var(--warning);}   
+  </style>
+</head>
+<body>
+  <!-- ============================================================= -->
+  <!-- 🎯  EXERCÍCIOS INTERATIVOS                                    -->
+  <!-- ============================================================= -->
+  <section id="exercicios">
+    <h2>Exercícios de Fixação (Concursos Públicos)</h2>
+
+    <!-- Questão 1 -->
+    <div class="exercise" data-answer="c">
+      <p>1. De acordo com a NBR&nbsp;5410, em áreas molhadas (banheiros e cozinhas) é obrigatória a instalação de qual dispositivo de proteção contra choques elétricos?</p>
+      <div class="answers">
+        <label><input type="radio" name="q1" value="a"> DPS (Dispositivo de Proteção contra Surtos)</label>
+        <label><input type="radio" name="q1" value="b"> Disjuntor termomagnético</label>
+        <label><input type="radio" name="q1" value="c"> DR (Dispositivo Diferencial Residual)</label>
+        <label><input type="radio" name="q1" value="d"> Fusível tipo Diazed</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+
+    <!-- Questão 2 -->
+    <div class="exercise" data-answer="a">
+      <p>2. Nos termos da NBR&nbsp;5410, equipamentos com potência superior a qual valor <em>devem</em> possuir circuito exclusivo (TUE) na instalação elétrica?</p>
+      <div class="answers">
+        <label><input type="radio" name="q2" value="a"> 600&nbsp;W</label>
+        <label><input type="radio" name="q2" value="b"> 800&nbsp;W</label>
+        <label><input type="radio" name="q2" value="c"> 1000&nbsp;W</label>
+        <label><input type="radio" name="q2" value="d"> 1200&nbsp;W</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+
+    <!-- Questão 3 -->
+    <div class="exercise" data-answer="b">
+      <p>3. A NBR&nbsp;5626 estabelece que a pressão mínima de serviço em pontos de consumo de água fria deve ser de, no mínimo:</p>
+      <div class="answers">
+        <label><input type="radio" name="q3" value="a"> 5&nbsp;kPa</label>
+        <label><input type="radio" name="q3" value="b"> 10&nbsp;kPa</label>
+        <label><input type="radio" name="q3" value="c"> 20&nbsp;kPa</label>
+        <label><input type="radio" name="q3" value="d"> 40&nbsp;kPa</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+
+    <!-- Questão 4 -->
+    <div class="exercise" data-answer="b">
+      <p>4. Segundo a NBR&nbsp;8160, a declividade <strong>mínima</strong> recomendada para ramais horizontais de esgoto sanitário é de:</p>
+      <div class="answers">
+        <label><input type="radio" name="q4" value="a"> 0,5&nbsp;%</label>
+        <label><input type="radio" name="q4" value="b"> 1&nbsp;%</label>
+        <label><input type="radio" name="q4" value="c"> 1,5&nbsp;%</label>
+        <label><input type="radio" name="q4" value="d"> 2&nbsp;%</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+
+    <!-- Questão 5 -->
+    <div class="exercise" data-answer="b">
+      <p>5. A classe de concreto <code>C25</code>, conforme a NBR&nbsp;6118, corresponde a uma resistência característica (f<sub>ck</sub>) de:</p>
+      <div class="answers">
+        <label><input type="radio" name="q5" value="a"> 20&nbsp;MPa</label>
+        <label><input type="radio" name="q5" value="b"> 25&nbsp;MPa</label>
+        <label><input type="radio" name="q5" value="c"> 30&nbsp;MPa</label>
+        <label><input type="radio" name="q5" value="d"> 35&nbsp;MPa</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+
+    <!-- Questão 6 -->
+    <div class="exercise" data-answer="a">
+      <p>6. Na NBR&nbsp;5419, para edificações com <em>alto</em> risco de perdas humanas e/ou materiais, é indicada a Classe de Proteção:</p>
+      <div class="answers">
+        <label><input type="radio" name="q6" value="a"> Classe&nbsp;I</label>
+        <label><input type="radio" name="q6" value="b"> Classe&nbsp;II</label>
+        <label><input type="radio" name="q6" value="c"> Classe&nbsp;III</label>
+        <label><input type="radio" name="q6" value="d"> Classe&nbsp;IV</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- 📜  SCRIPT                                                    -->
+  <!-- ============================================================= -->
+  <script>
+    // Função para avaliação individual
+    document.querySelectorAll('.exercise').forEach((ex) => {
+      const verifyBtn = ex.querySelector('.verify');
+      verifyBtn.addEventListener('click', () => {
+        const selected = ex.querySelector('input[type="radio"]:checked');
+        const feedback = ex.querySelector('.feedback');
+
+        if (!selected) {
+          feedback.textContent = 'Selecione uma opção para verificar!';
+          feedback.className = 'feedback';
+          return;
+        }
+
+        if (selected.value === ex.dataset.answer) {
+          feedback.textContent = '✅ Resposta correta!';
+          feedback.className = 'feedback correct';
+        } else {
+          feedback.textContent = '❌ Resposta incorreta.';
+          feedback.className = 'feedback incorrect';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

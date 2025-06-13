@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercícios – Paisagismo, Vegetação Urbana & Restauração | Concursos Públicos</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #fff;
+      --primary: #2c3e50;
+      --secondary: #16a085;
+      --accent: #e67e22;
+      --warn: #e74c3c;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .exercise {
+      background: var(--card);
+      padding: 18px 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: 24px;
+      max-width: 600px;
+    }
+    .exercise p {
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .answers input {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .btn {
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-size: 1rem;
+      user-select: none;
+    }
+    .btn:hover {
+      background: #1c2833;
+    }
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: var(--warn);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercícios para Concursos: Paisagismo, Vegetação Urbana & Restauração</h1>
+  <p>Teste seus conhecimentos com as questões abaixo. Ideal para quem vai prestar concurso público e precisa dominar esses temas.</p>
+
+  <!-- Exercício 1 -->
+  <section class="exercise" data-answer="b">
+    <p>Q1. Qual a principal vantagem de priorizar espécies nativas no paisagismo urbano?</p>
+    <div class="answers">
+      <label><input type="radio" name="q1" value="a" /> Crescimento mais rápido que espécies exóticas.</label>
+      <label><input type="radio" name="q1" value="b" /> Maior adaptação ao clima local e menor custo de manutenção.</label>
+      <label><input type="radio" name="q1" value="c" /> Produzir flores coloridas o ano todo.</label>
+      <label><input type="radio" name="q1" value="d" /> Reduzir a biodiversidade para controle de pragas.</label>
+    </div>
+    <button class="btn verify">Verificar</button>
+    <p class="feedback"></p>
+  </section>
+
+  <!-- Exercício 2 -->
+  <section class="exercise" data-answer="d">
+    <p>Q2. Segundo a Carta de Veneza, a restauração deve:</p>
+    <div class="answers">
+      <label><input type="radio" name="q2" value="a" /> Eliminar todas as adições históricas.</label>
+      <label><input type="radio" name="q2" value="b" /> Permitir reconstruções estilísticas imaginárias.</label>
+      <label><input type="radio" name="q2" value="c" /> Utilizar apenas materiais modernos.</label>
+      <label><input type="radio" name="q2" value="d" /> Respeitar contribuições de todas as épocas e evitar falsificações.</label>
+    </div>
+    <button class="btn verify">Verificar</button>
+    <p class="feedback"></p>
+  </section>
+
+  <!-- Exercício 3 -->
+  <section class="exercise" data-answer="a">
+    <p>Q3. Para registrar responsabilidade técnica sobre um projeto paisagístico de praça pública, o profissional arquiteto deve emitir:</p>
+    <div class="answers">
+      <label><input type="radio" name="q3" value="a" /> RRT</label>
+      <label><input type="radio" name="q3" value="b" /> ART</label>
+      <label><input type="radio" name="q3" value="c" /> Atestado de Capacidade Técnica</label>
+      <label><input type="radio" name="q3" value="d" /> Habite-se</label>
+    </div>
+    <button class="btn verify">Verificar</button>
+    <p class="feedback"></p>
+  </section>
+
+  <script>
+    document.querySelectorAll('.exercise').forEach(exercise => {
+      const btn = exercise.querySelector('.verify');
+      const feedback = exercise.querySelector('.feedback');
+      btn.addEventListener('click', () => {
+        const selected = exercise.querySelector('input[type="radio"]:checked');
+        if (!selected) {
+          feedback.textContent = 'Selecione uma opção antes de verificar!';
+          feedback.className = 'feedback incorrect';
+          return;
+        }
+        if (selected.value === exercise.dataset.answer) {
+          feedback.textContent = '✅ Resposta correta!';
+          feedback.className = 'feedback correct';
+        } else {
+          feedback.textContent = '❌ Resposta incorreta. Tente novamente.';
+          feedback.className = 'feedback incorrect';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

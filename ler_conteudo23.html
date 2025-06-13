@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento, Laudos & Pareceres Técnicos – Guia para Concursos</title>
+  <style>
+    :root{
+      --bg:#f4f4f9;--card:#fff;--pri:#2c3e50;--sec:#34495e;--accent:#28b463;--warn:#e74c3c;--muted:#7f8c8d;--radius:6px;--shadow:0 2px 6px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}body{margin:20px;font-family:Arial,Helvetica,sans-serif;line-height:1.6;background:var(--bg);color:#333}h1,h2{color:var(--pri)}h3{color:var(--sec)}section{margin-bottom:36px}ul{padding-left:18px}
+    .box{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow);margin-top:16px}
+    /*===== Exercícios =====*/
+    .exercise{margin-top:24px;padding:18px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .exercise p{margin:0 0 12px;font-weight:600}
+    .answers label{display:block;margin-bottom:6px;cursor:pointer}
+    .answers input{margin-right:8px;cursor:pointer}
+    .btn{padding:8px 16px;border:none;border-radius:var(--radius);background:var(--pri);color:#fff;cursor:pointer;transition:background .2s}
+    .btn:hover{background:#1c2833}
+    .feedback{margin-top:10px;font-weight:bold}
+    .correct{color:green}.incorrect{color:var(--warn)}
+  </style>
+</head>
+<body>
+  <h1>Orçamento, Laudos & Pareceres Técnicos – Estimativas de Custo e Responsabilidades</h1>
+
+  <!-- ============================================================ -->
+  <!-- 1. ESTIMATIVAS DE CUSTO & ORÇAMENTO DE OBRAS                -->
+  <!-- ============================================================ -->
+   
+  <section id="orcamento">
+    <h2>1. Estimativas de Custo e Orçamento de Obras</h2>
+    <div class="box">
+      <h3>1.1 Tipos de orçamento</h3>
+      <ul>
+        <li><strong>Orçamento preliminar (estimativo)</strong> – baseado em índices ou custo por m²; usado em estudos de viabilidade.</li>
+        <li><strong>Orçamento paramétrico</strong> – utiliza variáveis de projeto (área, volume, pavimentos) para prever custo.</li>
+        <li><strong>Orçamento analítico (detalhado)</strong> – levantamento completo de quantidades (LQ) + composições de custos unitários (CCU).</li>
+        <li><strong>Orçamento executivo</strong> – documento final para licitação, contendo planilha sintética, memória de cálculo, BDI e cronograma.</li>
+      </ul>
+
+      <h3>1.2 Composição de custos unitários (CCU)</h3>
+      <ul>
+        <li><strong>Custo Direto</strong>: materiais, mão‑de‑obra, equipamentos.</li>
+        <li><strong>Custo Indireto</strong>: canteiro, administração local, depreciações.</li>
+        <li><strong>Encargos Sociais</strong>: incidência sobre mão‑de‑obra (FGTS, INSS, etc.).</li>
+        <li><strong>BDI</strong> (Bonificação e Despesas Indiretas): parcelas de tributos, seguros, riscos, lucro, administração central.</li>
+        <li><strong>Bancos de dados oficiais</strong>: SINAPI, SICRO, ORSE, CUB.</li>
+      </ul>
+  <section>
+    <h2>Levantamento de Quantidades e Critérios de Medição</h2>
+    <p>Esse processo envolve a quantificação precisa dos serviços necessários para a execução de uma obra. Devem ser utilizados critérios normatizados (como a NBR 13531) para garantir a padronização e a coerência dos quantitativos. Medições podem ser diretas (em campo) ou indiretas (por projeto).</p>
+    <ul>
+      <li>É base para estimativas de custo;</li>
+      <li>Evita sobrepreço e superfaturamento;</li>
+      <li>Fundamenta os pagamentos por medição.</li>
+    </ul>
+    <div class="quiz">
+      <h3>Questão (CESPE/2021):</h3>
+      <p>O levantamento de quantidades deve seguir critérios objetivos e padronizados, sendo vedado o uso de estimativas genéricas.</p>
+      <input type="radio" name="q1" value="certo"> Certo<br>
+      <input type="radio" name="q1" value="errado"> Errado<br>
+      <button onclick="check('q1', 'certo')">Verificar</button>
+      <div id="feedback-q1"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bases Oficiais de Preço (SINAPI, SICRO, CUB) e Índices Regionais</h2>
+    <p>As bases oficiais são utilizadas para estimar os custos de obras públicas:</p>
+    <ul>
+      <li><strong>SINAPI</strong> (Caixa/IBGE): base federal para edificações e infraestrutura;</li>
+      <li><strong>SICRO</strong> (DNIT): voltado à infraestrutura rodoviária;</li>
+      <li><strong>CUB</strong> (SINDUSCON): custo básico do setor privado habitacional.</li>
+    </ul>
+    <p>Essas referências devem ser atualizadas conforme o local e a data de elaboração do orçamento. Índices como INCC, IPCA e regionais (FJP/MG, FGV) também são usados.</p>
+    <div class="quiz">
+      <h3>Questão (VUNESP/2022):</h3>
+      <p>O CUB é uma base oficial válida para obras públicas federais segundo a legislação vigente.</p>
+      <input type="radio" name="q2" value="certo"> Certo<br>
+      <input type="radio" name="q2" value="errado"> Errado<br>
+      <button onclick="check('q2', 'errado')">Verificar</button>
+      <div id="feedback-q2"></div>
+    </div>
+  </section>
+
+      <h3>1.3 Legislação & boas práticas</h3>
+      <ul>
+        <li><strong>Lei 14.133/2021 (art. 22)</strong> – exige planilha orçamentária detalhada na contratação de obras.</li>
+        <li><strong>Súmula 258/TCU</strong> – veda preços globais sem detalhamento de CCU.</li>
+        <li><strong>Manual de Obras Públicas/TCU</strong> – referência de metodologia e transparência.</li>
+      </ul>
+    </div>
+
+    <!-- Questões -->
+    <h3>Questões de Concurso</h3>
+    <div class="exercise" data-answer="c">
+      <p>1. (CESPE/Analista Infraestrutura/2019) Para se chegar ao <em>preço de venda</em> de um serviço, aplica‑se o BDI sobre:</p>
+      <div class="answers">
+        <label><input type="radio" name="q1" value="a"> Custo indireto</label>
+        <label><input type="radio" name="q1" value="b"> Encargos sociais</label>
+        <label><input type="radio" name="q1" value="c"> Custo direto</label>
+        <label><input type="radio" name="q1" value="d"> Lucro previsto</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="exercise" data-answer="b">
+      <p>2. (FGV/Engº Civil/2022) O orçamento recomendado na fase de <strong>estudo de viabilidade</strong> é o:</p>
+      <div class="answers">
+        <label><input type="radio" name="q2" value="a"> Analítico</label>
+        <label><input type="radio" name="q2" value="b"> Preliminar estimativo</label>
+        <label><input type="radio" name="q2" value="c"> Executivo</label>
+        <label><input type="radio" name="q2" value="d"> Paramétrico com curvas ABC</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 2. ESTRUTURA DE LAUDOS & PARECERES                           -->
+  <!-- ============================================================ -->
+  <section id="laudos">
+    <h2>2. Estrutura de Laudos e Pareceres Técnicos</h2>
+    <div class="box">
+      <h3>2.1 Diferença entre laudo, parecer e relatório</h3>
+      <ul>
+        <li><strong>Laudo pericial</strong> – documento conclusivo, fruto de vistoria e análise <em>in loco</em>, com fundamentação técnica.</li>
+        <li><strong>Parecer técnico</strong> – opinião técnica especializada, emitida sem necessariamente realizar vistoria.</li>
+        <li><strong>Relatório técnico</strong> – compila dados e informações, podendo subsidiar laudos e pareceres.</li>
+      </ul>
+
+      <h3>2.2 Partes obrigatórias do laudo (NBR 13752)</h3>
+      <ul>
+        <li><strong>Capa &amp; Identificação</strong></li>
+        <li><strong>Objeto e objetivo</strong></li>
+        <li><strong>Metodologia</strong> (procedimentos, normas, instrumentos)</li>
+        <li><strong>Inspeções &amp; levantamentos</strong></li>
+        <li><strong>Análise e discussões</strong></li>
+        <li><strong>Conclusão e recomendações</strong></li>
+        <li><strong>Anexos</strong> (ART/RRT, fotos, plantas, tabelas)</li>
+      </ul>
+
+      <h3>2.3 Erros comuns que anulam laudos</h3>
+      <ul>
+        <li>Ausência de <strong>ART/RRT</strong> do perito.</li>
+        <li>Falta de fundamentação normativa.</li>
+        <li>Juízo de valor ou termos jurídicos.</li>
+        <li>Omissão de data, assinatura ou conclusão.</li>
+      </ul>
+    </div>
+
+    <!-- Questões -->
+    <h3>Questões de Concurso</h3>
+    <div class="exercise" data-answer="c">
+      <p>3. (VUNESP/Perito/2023) Na estrutura prevista pela NBR&nbsp;13752, a descrição dos procedimentos e instrumentos utilizados na perícia integra a parte denominada:</p>
+      <div class="answers">
+        <label><input type="radio" name="q3" value="a"> Identificação</label>
+        <label><input type="radio" name="q3" value="b"> Conclusão</label>
+        <label><input type="radio" name="q3" value="c"> Metodologia</label>
+        <label><input type="radio" name="q3" value="d"> Anexos</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="exercise" data-answer="b">
+      <p>4. (Cebraspe/Arquiteto/2021) Documento que expressa <em>opinião técnica</em> sobre determinado assunto, sem vistoria detalhada, é denominado:</p>
+      <div class="answers">
+        <label><input type="radio" name="q4" value="a"> Laudo pericial</label>
+        <label><input type="radio" name="q4" value="b"> Parecer técnico</label>
+        <label><input type="radio" name="q4" value="c"> Relatório fotográfico</label>
+        <label><input type="radio" name="q4" value="d"> Memorial descritivo</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Acórdãos e Súmulas do TCU</h2>
+    <p>O Tribunal de Contas da União (TCU) emite súmulas e acórdãos com força normativa para a Administração Pública:</p>
+    <ul>
+      <li><strong>Súmula 258/TCU</strong>: exige detalhamento das composições unitárias de preços, com insumos individualizados;</li>
+      <li><strong>Acórdão 2622/2013</strong>: trata da obrigatoriedade de justificativa técnica para orçamentos com base em preços de mercado;</li>
+      <li><strong>Acórdão 1923/2018</strong>: recomenda a adoção do SINAPI/SICRO.</li>
+    </ul>
+    <div class="quiz">
+      <h3>Questão (FGV/2023):</h3>
+      <p>Segundo o TCU, a Administração pode omitir insumos das composições de preços se utilizar o SINAPI como base de referência.</p>
+      <input type="radio" name="q3" value="certo"> Certo<br>
+      <input type="radio" name="q3" value="errado"> Errado<br>
+      <button onclick="check('q3', 'errado')">Verificar</button>
+      <div id="feedback-q3"></div>
+    </div>
+  </section>
+  <!-- ============================================================ -->
+  <!-- 3. RESPONSABILIDADE TÉCNICA & ART / RRT                      -->
+  <!-- ============================================================ -->
+  <section id="responsabilidade">
+    <h2>3. Responsabilidade Técnica (ART / RRT)</h2>
+    <div class="box">
+      <h3>3.1 Fundamentos legais</h3>
+      <ul>
+        <li><strong>Lei 6.496/1977</strong> – institui a <abbr title="Anotação de Responsabilidade Técnica">ART</abbr> para engenheiros.</li>
+        <li><strong>Lei 12.378/2010</strong> – cria a <abbr title="Registro de Responsabilidade Técnica">RRT</abbr> para arquitetos e urbanistas.</li>
+        <li>Ambas <strong>atribuem responsabilidade civil, penal e administrativa</strong> ao profissional.</li>
+      </ul>
+
+      <h3>3.2 Quando registrar ART/RRT?</h3>
+      <ul>
+        <li>Elaboração de projetos, orçamentos, laudos, pareceres.</li>
+        <li>Execução de obras ou serviços técnicos.</li>
+        <li>Cada contrato ou atividade requer registro específico.</li>
+      </ul>
+
+      <h3>3.3 Penalidades por omissão</h3>
+      <ul>
+        <li>Multa pelo Conselho profissional (CREA/CAU).</li>
+        <li>Responsabilização por danos e vícios ocultos.</li>
+        <li>Impedimento de recebimento ou avaliação do documento técnico.</li>
+      </ul>
+    </div>
+  <section>
+    <h2>Responsabilidades pelo Orçamento no Ciclo da Obra</h2>
+    <p>Durante o ciclo da obra pública, diversos agentes são responsáveis por etapas distintas:</p>
+    <ul>
+      <li><strong>Autor do Projeto:</strong> responsável pela elaboração do orçamento e levantamento dos quantitativos;</li>
+      <li><strong>Fiscal da Obra:</strong> verifica a conformidade entre execução, medições e orçamento;</li>
+      <li><strong>Autoridade Homologadora:</strong> aprova e assume responsabilidade legal pelo orçamento apresentado.</li>
+    </ul>
+    <p>A responsabilidade técnica é formalizada por meio de ART (CREA) ou RRT (CAU), conforme o profissional envolvido.</p>
+    <div class="quiz">
+      <h3>Questão (FCC/2022):</h3>
+      <p>O fiscal da obra é o único responsável pela exatidão do orçamento apresentado para licitação.</p>
+      <input type="radio" name="q4" value="certo"> Certo<br>
+      <input type="radio" name="q4" value="errado"> Errado<br>
+      <button onclick="check('q4', 'errado')">Verificar</button>
+      <div id="feedback-q4"></div>
+    </div>
+  </section>
+    <!-- Questões -->
+    <h3>Questões de Concurso</h3>
+    <div class="exercise" data-answer="a">
+      <p>5. (FCC/Engº Orçamentista/2018) A lei que institui a Anotação de Responsabilidade Técnica (ART) é a:</p>
+      <div class="answers">
+        <label><input type="radio" name="q5" value="a"> Lei&nbsp;6.496/1977</label>
+        <label><input type="radio" name="q5" value="b"> Lei&nbsp;8.666/1993</label>
+        <label><input type="radio" name="q5" value="c"> Lei&nbsp;12.378/2010</label>
+        <label><input type="radio" name="q5" value="d"> Lei&nbsp;14.133/2021</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="exercise" data-answer="b">
+      <p>6. (IADES/Arquiteto/2022) Para emissão de parecer técnico por arquiteto, o documento que comprova a responsabilidade é o:</p>
+      <div class="answers">
+        <label><input type="radio" name="q6" value="a"> ART</label>
+        <label><input type="radio" name="q6" value="b"> RRT</label>
+        <label><input type="radio" name="q6" value="c"> TRT</label>
+        <label><input type="radio" name="q6" value="d"> CNPJ da empresa</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- Script de Feedback                                           -->
+  <!-- ============================================================ -->
+  <script>
+    document.querySelectorAll('.exercise').forEach(ex => {
+      ex.querySelector('.verify').addEventListener('click', () => {
+        const sel = ex.querySelector('input[type="radio"]:checked');
+        const fb = ex.querySelector('.feedback');
+        if (!sel){fb.textContent='Selecione uma opção!';fb.className='feedback';return;}
+        if (sel.value === ex.dataset.answer){fb.textContent='✅ Resposta correta!';fb.className='feedback correct';}
+        else{fb.textContent='❌ Resposta incorreta.';fb.className='feedback incorrect';}
+      });
+    });
+  </script>
+</body>
+</html>

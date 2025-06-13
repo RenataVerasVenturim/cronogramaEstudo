@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos Específicos – Paisagismo, Vegetação Urbana & Restauração | Guia para Concursos</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --primary: #2c3e50;
+      --secondary: #16a085;
+      --accent: #e67e22;
+      --warn: #e74c3c;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      line-height: 1.6;
+      color: #333;
+    }
+    h1, h2 { color: var(--primary); }
+    h3 { color: var(--secondary); }
+    section { margin-bottom: 40px; }
+    ul { padding-left: 18px; }
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: 14px;
+    }
+    /* -‑‑‑ QUIZ ‑‑‑ */
+    .exercise {
+      background: var(--card);
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: 24px;
+    }
+    .exercise p { margin: 0 0 12px; font-weight: 600; }
+    .answers label { display: block; margin-bottom: 6px; cursor: pointer; }
+    .answers input { margin-right: 8px; cursor: pointer; }
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn:hover { background: #1c2833; }
+    .feedback { margin-top: 10px; font-weight: bold; }
+    .correct { color: green; }
+    .incorrect { color: var(--warn); }
+  </style>
+</head>
+<body>
+  <h1>Projetos Específicos – Guia Essencial para Concursos Públicos</h1>
+  <p>Conteúdo completo sobre <strong>Paisagismo & Vegetação Urbana</strong> e <strong>Reformas, Revitalizações & Restaurações</strong>, incluindo bases normativas e responsabilidades técnicas.</p>
+
+  <!-- ============================================================ -->
+  <!-- 1 ▸ PAISAGISMO & VEGETAÇÃO URBANA                           -->
+  <!-- ============================================================ -->
+  <section id="paisagismo">
+    <h2>1. Paisagismo & Vegetação Urbana</h2>
+    <div class="card">
+      <h3>1.1 Fundamentos e Funções</h3>
+      <ul>
+        <li><strong>Funções ambientais:</strong> conforto térmico, sequestro de carbono, filtragem de poluentes, controle de erosão.</li>
+        <li><strong>Funções sociais:</strong> recreação, saúde pública, identidade cultural.</li>
+        <li><strong>Funções econômicas:</strong> valorização imobiliária, turismo.</li>
+      </ul>
+      <h3>1.2 Planejamento de Áreas Verdes</h3>
+      <ul>
+        <li>Praças, parques lineares, corredores verdes, telhados e fachadas verdes.</li>
+        <li>Dimensionamento pela <em>razão m²/habitante</em> (OMS recomenda 9 m²/hab).</li>
+        <li>Integração ao sistema de mobilidade ativa (caminháveis e cicláveis).</li>
+      </ul>
+      <h3>1.3 Seleção de Espécies</h3>
+      <ul>
+        <li>Critérios: porte, sistema radicular, caducifólia x perenifólia, atratividade faunística.</li>
+        <li>Preferir <strong>espécies nativas</strong> (resolução CONAMA  nº 392/2007) para reduzir manutenção.</li>
+        <li>Evitar espécies invasoras <em>Leucaena leucocephala</em>, <em>Schinus terebinthifolia</em> etc.</li>
+      </ul>
+      <h3>1.4 Normas & Legislação</h3>
+      <ul>
+        <li><strong>CONAMA 302/2002</strong> – APPs urbanas em torno de corpos d’água.</li>
+        <li><strong>Lei 12.651/2012</strong> (Código Florestal) – vegetação nativa em área urbana.</li>
+        <li>Planos Diretores & Plano de Arborização Urbana (municipais).</li>
+      </ul>
+    </div>
+
+    <!-- Quiz 1 -->
+    <div class="exercise" data-answer="b">
+      <p>Q1. A principal vantagem de priorizar espécies nativas no paisagismo urbano é:</p>
+      <div class="answers">
+        <label><input type="radio" name="q01" value="a"> Crescimento mais rápido que espécies exóticas.</label>
+        <label><input type="radio" name="q01" value="b"> Maior adaptação ao clima local e menor custo de manutenção.</label>
+        <label><input type="radio" name="q01" value="c"> Produzir flores coloridas o ano todo.</label>
+        <label><input type="radio" name="q01" value="d"> Reduzir a biodiversidade para controle de pragas.</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 2 ▸ REFORMAS, REVITALIZAÇÕES & RESTAURAÇÃO                  -->
+  <!-- ============================================================ -->
+  <section id="restauro">
+    <h2>2. Reformas, Revitalizações & Restaurações</h2>
+    <div class="card">
+      <h3>2.1 Conceitos‑chave</h3>
+      <ul>
+        <li><strong>Conservação</strong>: ações para retardar deterioração.</li>
+        <li><strong>Restauro</strong>: devolver estado/forma original <em>sem falsificação</em> (Carta de Veneza, 1964).</li>
+        <li><strong>Reabilitação</strong>: adequar uso mantendo valores culturais.</li>
+        <li><strong>Retrofit</strong>: atualização de sistemas (climatização, elétrica) sem alterar fachada.</li>
+        <li><strong>Revitalização</strong>: intervenção + estímulos socioeconômicos na área urbana.</li>
+      </ul>
+      <h3>2.2 Cartas Patrimoniais & Referências</h3>
+      <ul>
+        <li><strong>Carta de Atenas (1931)</strong> – restauração científica.</li>
+        <li><strong>Carta de Veneza (1964)</strong> – critérios para restauro.</li>
+        <li><strong>Carta de Burra (1979)</strong> – conservação de sítios culturais.</li>
+      </ul>
+      <h3>2.3 Normas ABNT Relacionadas</h3>
+      <ul>
+        <li><strong>NBR 16824</strong> – Intervenções em estruturas existentes.</li>
+        <li><strong>NBR 15575</strong> – Desempenho de edificações (aplicável em retrofit).</li>
+        <li><strong>NBR 5674</strong> – Manutenção de edificações.</li>
+      </ul>
+      <h3>2.4 Fases de Projeto de Intervenção</h3>
+      <ol>
+        <li>Levantamento (as built, patologias, KPIs de uso).</li>
+        <li>Diagnóstico (análise estrutural, mapeamento de danos).</li>
+        <li>Proposta de intervenção (anteprojeto e projeto executivo).</li>
+        <li>Obra & monitoramento (plano de manutenção).</li>
+      </ol>
+    </div>
+
+    <!-- Quiz 2 -->
+    <div class="exercise" data-answer="d">
+      <p>Q2. Segundo a Carta de Veneza, a restauração deve:</p>
+      <div class="answers">
+        <label><input type="radio" name="q02" value="a"> Eliminar todas as adições históricas.</label>
+        <label><input type="radio" name="q02" value="b"> Permitir reconstruções estilísticas imaginárias.</label>
+        <label><input type="radio" name="q02" value="c"> Utilizar apenas materiais modernos.</label>
+        <label><input type="radio" name="q02" value="d"> Respeitar contribuições de todas as épocas e evitar falsificações.</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 3 ▸ RESPONSABILIDADES & LEGISLAÇÃO                           -->
+  <!-- ============================================================ -->
+  <section id="legislacao">
+    <h2>3. Responsabilidades Técnicas & Legislação</h2>
+    <div class="card">
+      <h3>3.1 Órgãos de Proteção</h3>
+      <ul>
+        <li><strong>IPHAN</strong> – nível federal (DL 25/1937).</li>
+        <li>Conselhos estaduais de patrimônio (CONDEPHAAT‑SP) e municipais (CONPRESP‑SP).</li>
+      </ul>
+      <h3>3.2 Responsabilidade Profissional</h3>
+      <ul>
+        <li><strong>RRT (CAU)</strong> e <strong>ART (CREA)</strong> para projetos e obras.</li>
+        <li>Resolução CAU/BR 21/2012: atribuições em paisagismo e restauro.</li>
+      </ul>
+      <h3>3.3 Leis & Normas Ambientais</h3>
+      <ul>
+        <li>Lei 10.257/2001 – Estatuto da Cidade (gestão democrática, ZEIS).</li>
+        <li>Resoluções CONAMA 001/1986 – EIA/RIMA; 302/2002 – APPs urbanas.</li>
+      </ul>
+    </div>
+
+    <!-- Quiz 3 -->
+    <div class="exercise" data-answer="a">
+      <p>Q3. Para registrar responsabilidade técnica sobre um projeto paisagístico de praça pública, o profissional arquiteto deve emitir:</p>
+      <div class="answers">
+        <label><input type="radio" name="q03" value="a"> RRT</label>
+        <label><input type="radio" name="q03" value="b"> ART</label>
+        <label><input type="radio" name="q03" value="c"> Atestado de Capacidade Técnica</label>
+        <label><input type="radio" name="q03" value="d"> Habite‑se</label>
+      </div>
+      <button class="btn verify">Verificar</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SCRIPT PARA FEEDBACK                                         -->
+  <!-- ============================================================ -->
+  <script>
+    document.querySelectorAll('.exercise').forEach(ex => {
+      ex.querySelector('.verify').addEventListener('click', () => {
+        const selected = ex.querySelector('input[type="radio"]:checked');
+        const feedback = ex.querySelector('.feedback');
+        if (!selected) {
+          feedback.textContent = 'Selecione uma opção!';
+          feedback.className = 'feedback';
+          return;
+        }
+        if (selected.value === ex.dataset.answer) {
+          feedback.textContent = '✅ Resposta correta!';
+          feedback.className = 'feedback correct';
+        } else {
+          feedback.textContent = '❌ Resposta incorreta.';
+          feedback.className = 'feedback incorrect';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
