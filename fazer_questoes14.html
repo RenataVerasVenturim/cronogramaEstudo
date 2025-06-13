@@ -89,6 +89,40 @@
         <label><input type="radio" name="q4" value="d"> Qualquer população, sem exceção.</label>
       </div>
 
+      <!-- Questões novas adicionadas abaixo -->
+
+      <div class="question">
+        <p><strong>5. De acordo com a Lei n.º 10.257/01, o Plano Diretor é obrigatório para cidades:</strong></p>
+        <label><input type="radio" name="q5" value="a"> com mais de cinco mil habitantes</label>
+        <label><input type="radio" name="q5" value="b"> com mais de 500km² de território</label>
+        <label><input type="radio" name="q5" value="c"> integrantes de regiões metropolitanas e aglomerações urbanas</label>
+        <label><input type="radio" name="q5" value="d"> distantes de áreas de influência de empreendimentos ou atividades com significativo impacto ambiental</label>
+      </div>
+
+      <div class="question">
+        <p><strong>6. Pela Lei Federal 10.257/2001, o direito de preempção confere:</strong></p>
+        <label><input type="radio" name="q6" value="a"> a possibilidade de aquisição de propriedades superficiárias por parte de um interessado particular</label>
+        <label><input type="radio" name="q6" value="b"> a condição de construir, ao interessado, acima do coeficiente de aproveitamento básico adotado, mediante contrapartida a ser prestada pelo beneficiário</label>
+        <label><input type="radio" name="q6" value="c"> a um interessado a possibilidade de construir em imóvel urbano de outrem</label>
+        <label><input type="radio" name="q6" value="d"> a preferência ao poder público municipal para aquisição de imóvel urbano que seja objeto de alienação onerosa entre particulares</label>
+      </div>
+
+      <div class="question">
+        <p><strong>7. A Lei Federal nº 10.257/2001 prevê que o Plano Diretor é instrumento obrigatório para cidades:</strong></p>
+        <label><input type="radio" name="q7" value="a"> com mais de 20 mil habitantes, caso seja integrante de uma região metropolitana</label>
+        <label><input type="radio" name="q7" value="b"> com mais de 20 mil habitantes, caso seja integrante de uma área de especial interesse turístico</label>
+        <label><input type="radio" name="q7" value="c"> com mais de 20 mil habitantes, mesmo se não integrante de uma região metropolitana ou de uma área de especial interesse turístico</label>
+        <label><input type="radio" name="q7" value="d"> com mais de 25 mil habitantes, mesmo se não integrante de uma região metropolitana ou de uma área de especial interesse turístico</label>
+      </div>
+
+      <div class="question">
+        <p><strong>8. Considera-se instrumento de política urbana utilizada no planejamento municipal:</strong></p>
+        <label><input type="radio" name="q8" value="a"> o anteprojeto</label>
+        <label><input type="radio" name="q8" value="b"> o plano diretor</label>
+        <label><input type="radio" name="q8" value="c"> a edificação urbana</label>
+        <label><input type="radio" name="q8" value="d"> o desenvolvimento socioeconômico</label>
+      </div>
+
       <button type="button" onclick="verificarRespostas()">Enviar Respostas</button>
     </form>
 
@@ -101,11 +135,15 @@
         q1: "c",
         q2: "b",
         q3: "c",
-        q4: "b"
+        q4: "b",
+        q5: "a",
+        q6: "d",
+        q7: "c",
+        q8: "b"
       };
 
       let pontos = 0;
-      let total = 4;
+      let total = 8;
       let resultadoHTML = "";
 
       for (let i = 1; i <= total; i++) {

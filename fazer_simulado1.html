@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulado Arquiteto – Selecon (5 questões)</title>
+  <style>
+    body{font-family:Arial,sans-serif;background:#f2f2f2;padding:20px;color:#333;}
+    .container{max-width:900px;margin:auto;background:#fff;padding:30px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);}
+    h1{color:#003366;margin:0 0 10px}
+    #timer{float:right;color:#d32f2f;font-weight:bold}
+    .question{margin:20px 0;padding-bottom:15px;border-bottom:1px solid #ccc}
+    .question-header{display:flex;justify-content:space-between;font-weight:bold;margin-bottom:5px}
+    label{display:block;margin:5px 0}
+    .correct{color:green;font-weight:bold}
+    .incorrect{color:red;font-weight:bold}
+    .answer{font-size:14px;margin-top:5px}
+    button{padding:12px 20px;font-size:16px;border:none;border-radius:5px;background:#003366;color:#fff;cursor:pointer;margin-top:20px}
+    button:hover{background:#001f4d}
+    #result{font-size:18px;font-weight:bold;margin-top:20px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Simulado Arquiteto – Selecon <span id="timer">60:00</span></h1>
+    <form id="quizForm">
+      <div id="quiz"></div>
+      <button type="submit">Finalizar Simulado</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    /* ------------ NOVAS QUESTÕES ---------------- */
+   const QUESTIONS = [
+  {
+    q: 'Nos materiais naturais e manufaturados da construção civil, a energia refletida depende da superfície na qual incide a radiação. É o que se chama de efeito Albedo, que indica a refletividade total de uma superfície iluminada pelo Sol. Nesse sentido, em condições similares, pode‑se afirmar que:',
+    o: [
+      'a areia úmida tem menor efeito albedo que a areia seca',
+      'o concreto tem menor efeito albedo que a areia úmida',
+      'a areia seca tem maior efeito albedo que o concreto',
+      'o asfalto tem maior efeito albedo que o concreto'
+    ],
+    a: 2,
+    fonte: '#3340686 – Selecon 2025 – Arquiteto (Pref. Sinop)'
+  },
+  {
+  q: 'O fenômeno óptico decorrente do poder difusor de uma superfície ou, ainda, a fração da luz incidente que é difundida por uma superfície, especialmente observada nos pisos e fachadas dos espaços urbanos, é chamado de:',
+  o: [
+    'albedo',
+    'difusão',
+    'difração',
+    'reflexão'
+  ],
+  a: 1,
+  fonte: 'Conforto ambiental e iluminação – Selecon 2025'
+},
+  {
+  q: 'Com relação à vegetação urbana e à sensação de conforto, podemos considerar que o efeito que interfere no deslocamento do ar, causando a redução de velocidade do vento, conforme a permeabilidade de uma barreira, se chama:',
+  o: [
+    'deflexão',
+    'filtragem',
+    'condução',
+    'obstrução'
+  ],
+  a: 1,
+  fonte: 'Conforto ambiental – Vegetação urbana (Selecon 2025)'
+},
+
+  {
+    q: 'A ventilação cruzada em edificações é uma estratégia de conforto ambiental que se otimiza ao considerar:',
+    o: [
+      'aberturas variadas e simétricas em uma mesma fachada',
+      'aberturas variadas e assimétricas em uma mesma fachada',
+      'aberturas em distintas fachadas, sem alinhamento com relação à direção ao vento',
+      'aberturas em distintas fachadas, com alinhamento com relação à direção ao vento'
+    ],
+    a: 3,
+    fonte: 'Conforto Ambiental (Selecon – diversos)'
+  },
+  {
+    q: 'No AutoCAD, o comando de zoom que mostra toda a área efetivamente desenhada denomina‑se:',
+    o: [
+      'zoom extents',
+      'zoom pan',
+      'zoom out',
+      'zoom all'
+    ],
+    a: 0,
+    fonte: 'AutoCAD – Atalhos (Selecon)'
+  },
+  {
+    q: 'De acordo com a ABNT NBR 9050/2021 (Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos), a exigência de corrimão intermediário, duplo e com duas alturas, de forma geral, é para escadas ou rampas com largura igual ou superior a:',
+    o: [
+      '2,40 metros',
+      '2,50 metros',
+      '2,60 metros',
+      '2,80 metros'
+    ],
+    a: 0,
+    fonte: 'ABNT NBR 9050:2021'
+  },
+  {
+    q: 'No programa Autocad (da Autodesk), o comando que serve para tornar visível um conjunto de linhas na área de trabalho definidas em intervalos ortogonais regulares é o:',
+    o: [
+      'LINE',
+      'SNAP',
+      'GRID',
+      'ORTHO'
+    ],
+    a: 2,
+    fonte: 'AutoCAD – Conceitos básicos'
+  },
+  {
+    q: 'O desenvolvimento a partir dos resultados de fases anteriores incluindo as exigências urbanísticas, formais, funcionais, técnicas, econômicas, ecológicas, etc., com a contribuição de colaboradores especializados, além da representação gráfica com indicações detalhadas em escalas mais ampliadas, acompanhadas de textos com memorial descritivo detalhado, especificações e caderno de encargos corresponde ao:',
+    o: [
+      'projeto básico',
+      'projeto executivo',
+      'projeto complementar',
+      'projeto de legalização'
+    ],
+    a: 1,
+    fonte: 'Etapas de Projeto – Selecon'
+  },
+  {
+    q: 'A Lei Federal nº 10.257/2001, conhecida como o Estatuto da Cidade, prevê que o Plano Diretor é um instrumento obrigatório, entre outras condições, para cidades:',
+    o: [
+      'com mais de 20 mil habitantes, caso seja integrante de uma região metropolitana',
+      'com mais de 20 mil habitantes, caso seja integrante de uma área de especial interesse turístico',
+      'com mais de 20 mil habitantes, mesmo se não integrante de uma região metropolitana ou de uma área de especial interesse turístico',
+      'com mais de 25 mil habitantes, mesmo se não integrante de uma região metropolitana ou de uma área de especial interesse turístico'
+    ],
+    a: 2,
+    fonte: 'Estatuto da Cidade – Plano Diretor'
+  },
+  {
+    q: 'Ao produto composto por uma lista precificada de todos os serviços levantados do projeto, atividades a serem executadas na obra por meio de composições de custos de materiais, mão de obra e equipamentos necessários para executar uma unidade de serviço de forma precisa e detalhada, chamamos de orçamento:',
+    o: [
+      'analítico',
+      'sintético',
+      'descritivo',
+      'parametrizado'
+    ],
+    a: 0,
+    fonte: 'Orçamento de Obras – Selecon'
+  }
+];
+
+
+    /* ----------- CONSTRUÇÃO DO QUIZ ------------- */
+    const quizDiv = document.getElementById('quiz');
+    const form    = document.getElementById('quizForm');
+    const result  = document.getElementById('result');
+    const timerEl = document.getElementById('timer');
+
+    QUESTIONS.forEach((item, idx)=>{
+      const qBlock = document.createElement('div');
+      qBlock.className='question';
+      qBlock.innerHTML = `
+        <div class="question-header">
+          <span>${idx+1}. ${item.q}</span>
+          <span style="font-size:13px;color:#666">${item.fonte}</span>
+        </div>`+
+        item.o.map((opt,i)=>
+          `<label><input type="radio" name="q${idx}" value="${i}" required> ${opt}</label>`
+        ).join('')+
+        `<div id="fb${idx}" class="answer"></div>`;
+      quizDiv.appendChild(qBlock);
+    });
+
+    /* --------------- TIMER 60 min --------------- */
+    let t = 60*60;
+    const countdown = setInterval(()=>{
+      const m = String(Math.floor(t/60)).padStart(2,'0');
+      const s = String(t%60).padStart(2,'0');
+      timerEl.textContent=`${m}:${s}`;
+      if(--t<0){clearInterval(countdown);form.requestSubmit();}
+    },1000);
+
+    /* --------------- CORREÇÃO ------------------- */
+    form.onsubmit = e=>{
+      e.preventDefault();
+      clearInterval(countdown);
+
+      let acertos=0;
+      QUESTIONS.forEach((q,i)=>{
+        const marcada = form[`q${i}`].value;
+        const fb = document.getElementById(`fb${i}`);
+        if(+marcada===q.a){
+          acertos++;
+          fb.innerHTML = '<span class="correct">✔ Você acertou!</span>';
+        }else{
+          fb.innerHTML = `<span class="incorrect">✘ Você errou.</span> Resposta correta: <strong>${q.o[q.a]}</strong>`;
+        }
+      });
+
+      result.innerHTML = `Resultado final: <strong>${acertos}</strong> de <strong>${QUESTIONS.length}</strong> questões corretas.`;
+      form.querySelector('button').disabled = true;
+    };
+  </script>
+</body>
+</html>
